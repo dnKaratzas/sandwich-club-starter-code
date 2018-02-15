@@ -129,7 +129,7 @@ public class DetailActivity extends AppCompatActivity {
             tvOriginValue.setText(sandwich.getPlaceOfOrigin());
         }
 
-        // Place of Origin
+        // Description
         if (sandwich.getDescription().isEmpty()) {
             tvDescriptionLabel.setVisibility(View.GONE);
             tvDescriptionValue.setVisibility(View.GONE);
