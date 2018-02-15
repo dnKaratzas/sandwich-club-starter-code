@@ -1,59 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/svDetails"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <ImageView
-        android:id="@+id/image_iv"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/origin_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/ivSandwichImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/sandwich_picture_content_description"
+            android:minHeight="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvAlsoKnownLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/detail_also_known_as_label"
+            android:textAppearance="@style/DetailTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivSandwichImage" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_ingredients_label"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvAlsoKnownValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DetailTextValue"
+            app:layout_constraintEnd_toEndOf="@+id/tvAlsoKnownLabel"
+            app:layout_constraintStart_toStartOf="@+id/tvAlsoKnownLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvAlsoKnownLabel"
+            tools:text="  Lorem ipsum dolor sit amet. " />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_place_of_origin_label"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvOriginLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/detail_place_of_origin_label"
+            android:textAppearance="@style/DetailTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlsoKnownValue" />
 
-    <TextView
-        android:id="@+id/description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvOriginValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DetailTextValue"
+            app:layout_constraintEnd_toEndOf="@+id/tvOriginLabel"
+            app:layout_constraintStart_toStartOf="@+id/tvOriginLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvOriginLabel"
+            tools:text="  Lorem ipsum dolor sit amet. " />
 
-    <TextView
-        android:id="@+id/ingredients_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvIngredientsLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/detail_ingredients_label"
+            android:textAppearance="@style/DetailTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOriginValue" />
 
-    <TextView
-        android:id="@+id/also_known_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_description_label"
-        android:textStyle="bold" />
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvIngredientsValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DetailTextValue"
+            app:layout_constraintEnd_toEndOf="@+id/tvIngredientsLabel"
+            app:layout_constraintStart_toStartOf="@+id/tvIngredientsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvIngredientsLabel"
+            tools:text="  Lorem ipsum dolor sit amet. " />
+
+        <TextView
+            android:id="@+id/tvDescriptionLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/detail_description_label"
+            android:textAppearance="@style/DetailTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvIngredientsValue" />
+
+        <TextView
+            android:id="@+id/tvDescriptionValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp"
+            android:textAppearance="@style/DetailTextValue"
+            app:layout_constraintEnd_toEndOf="@+id/tvDescriptionLabel"
+            app:layout_constraintStart_toStartOf="@+id/tvDescriptionLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLabel"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -10,6 +10,30 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String EXTRA_LIST_VIEW_POSITION = "extra_list_view_position";
+
+    private ListView listView;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Save the scroll view position
+        outState.putInt(EXTRA_LIST_VIEW_POSITION, listView.getScrollY());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        final int position = savedInstanceState.getInt(EXTRA_LIST_VIEW_POSITION);
+
+        listView.post(new Runnable() {
+            public void run() {
+                listView.scrollTo(0, position);
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, sandwiches);
 
         // Simplification: Using a ListView instead of a RecyclerView
-        ListView listView = findViewById(R.id.sandwiches_listview);
+        listView = findViewById(R.id.sandwiches_listview);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

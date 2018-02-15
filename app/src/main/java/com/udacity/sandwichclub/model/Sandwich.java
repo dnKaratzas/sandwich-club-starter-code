@@ -1,5 +1,7 @@
 package com.udacity.sandwichclub.model;
 
+import com.udacity.sandwichclub.utils.Misc;
+
 import java.util.List;
 
 public class Sandwich {
@@ -38,6 +40,10 @@ public class Sandwich {
         return alsoKnownAs;
     }
 
+    public String getAlsoKnownAsFormatted() {
+        return Misc.join(alsoKnownAs, ", ");
+    }
+
     public void setAlsoKnownAs(List<String> alsoKnownAs) {
         this.alsoKnownAs = alsoKnownAs;
     }
@@ -68,6 +74,10 @@ public class Sandwich {
 
     public List<String> getIngredients() {
         return ingredients;
+    }
+
+    public String getIngredientsFormatted() {
+        return Misc.join(ingredients, ", ");
     }
 
     public void setIngredients(List<String> ingredients) {
